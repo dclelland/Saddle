@@ -119,7 +119,7 @@ extension Matrix2 {
         case parts(_ x: Matrix.Malformation, _ y: Matrix.Malformation)
         case xPart(_ x: Matrix.Malformation)
         case yPart(_ y: Matrix.Malformation)
-        case shapeMismatch(_ real: Shape, _ imaginary: Shape)
+        case shapeMismatch(_ x: Shape, _ y: Shape)
         
         public var description: String {
             switch self {

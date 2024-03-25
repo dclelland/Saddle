@@ -35,6 +35,7 @@ import Saddle
 
 ## Todo
 
+- [ ] Refactor matrix validation
 - [ ] Write documentation
 
 # Documentation
