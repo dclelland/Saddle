@@ -67,5 +67,9 @@ add functors
 
 yeah perhaps these should have image implementations...?
 
-add 'crop' helper which just takes an int and pipes it to all
+- arithmetic
+- wrappers
+- functors
+- dot and cross products
+- complex image should have the lightness around the right way; just invert it first
 ```
