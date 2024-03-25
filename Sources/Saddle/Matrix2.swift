@@ -10,7 +10,7 @@ import Plinth
 public struct Matrix2<Scalar> where Scalar: SIMDScalar {
     
     public typealias Matrix = Plinth.Matrix<Scalar>
-    public typealias Vector = SIMD2<Scalar>
+    public typealias SIMD = SIMD2<Scalar>
     
     public var x: Matrix
     public var y: Matrix
@@ -20,22 +20,22 @@ public struct Matrix2<Scalar> where Scalar: SIMDScalar {
         self.y = y
     }
     
-    public init(shape: Shape, repeating element: Vector) {
+    public init(shape: Shape, repeating element: SIMD) {
         self.init(
             x: .init(shape: shape, repeating: element.x),
             y: .init(shape: shape, repeating: element.y)
         )
     }
     
-    public init(shape: Shape, elements: [Vector]) {
+    public init(shape: Shape, elements: [SIMD]) {
         self.init(
             x: .init(shape: shape, elements: elements.map(\.x)),
             y: .init(shape: shape, elements: elements.map(\.y))
         )
     }
     
-    public init(shape: Shape, _ closure: @autoclosure () throws -> Vector) rethrows {
-        var elements: [Vector] = []
+    public init(shape: Shape, _ closure: @autoclosure () throws -> SIMD) rethrows {
+        var elements: [SIMD] = []
         elements.reserveCapacity(shape.count)
         for _ in 0..<shape.count {
             elements.append(try closure())
@@ -43,8 +43,8 @@ public struct Matrix2<Scalar> where Scalar: SIMDScalar {
         self.init(shape: shape, elements: elements)
     }
     
-    public init(shape: Shape, _ closure: (_ row: Int, _ column: Int) throws -> Vector) rethrows {
-        var elements: [Vector] = []
+    public init(shape: Shape, _ closure: (_ row: Int, _ column: Int) throws -> SIMD) rethrows {
+        var elements: [SIMD] = []
         elements.reserveCapacity(shape.count)
         for row in 0..<shape.rows {
             for column in 0..<shape.columns {
@@ -58,19 +58,19 @@ public struct Matrix2<Scalar> where Scalar: SIMDScalar {
 
 extension Matrix2 {
     
-    public init(element: Vector) {
+    public init(element: SIMD) {
         self.init(shape: .square(length: 1), elements: [element])
     }
     
-    public init(row: [Vector]) {
+    public init(row: [SIMD]) {
         self.init(shape: .row(length: row.count), elements: row)
     }
     
-    public init(column: [Vector]) {
+    public init(column: [SIMD]) {
         self.init(shape: .column(length: column.count), elements: column)
     }
     
-    public init(grid: [[Vector]]) {
+    public init(grid: [[SIMD]]) {
         self.init(shape: .init(rows: grid.count, columns: grid.first?.count ?? 0), elements: Array(grid.joined()))
     }
     
@@ -164,11 +164,11 @@ extension Matrix2 {
 
 extension Matrix2 {
     
-    public var elements: [Vector] {
+    public var elements: [SIMD] {
         return Array(self)
     }
     
-    public var grid: [[Vector]] {
+    public var grid: [[SIMD]] {
         return shape.rowIndices.map { row in
             return Array(elements[shape.indicesFor(row: row)])
         }
@@ -178,10 +178,10 @@ extension Matrix2 {
 
 extension Matrix2 {
     
-    public subscript(row: Int, column: Int) -> Vector {
+    public subscript(row: Int, column: Int) -> SIMD {
         get {
             precondition(shape.contains(row: row, column: column))
-            return Vector(x[row, column], y[row, column])
+            return SIMD(x[row, column], y[row, column])
         }
         set {
             precondition(shape.contains(row: row, column: column))
@@ -194,7 +194,7 @@ extension Matrix2 {
 
 extension Matrix2: ExpressibleByArrayLiteral {
 
-    public init(arrayLiteral elements: [Vector]...) {
+    public init(arrayLiteral elements: [SIMD]...) {
         self.init(grid: elements)
     }
 
@@ -273,8 +273,8 @@ extension Matrix2: Collection {
         return index + 1
     }
 
-    public subscript(_ index: Index) -> Vector {
-        return Vector(x[index], y[index])
+    public subscript(_ index: Index) -> SIMD {
+        return SIMD(x[index], y[index])
     }
     
 }
