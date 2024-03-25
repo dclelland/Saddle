@@ -13,7 +13,7 @@ let package = Package(
         .library(name: "Saddle", targets: ["Saddle"])
     ],
     dependencies: [
-        .package(url: "https://github.com/dclelland/Plinth", from: "2.6.2")
+        .package(url: "https://github.com/dclelland/Plinth", from: "2.6.3")
     ],
     targets: [
         .target(
