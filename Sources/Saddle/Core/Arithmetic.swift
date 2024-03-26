@@ -62,15 +62,15 @@ extension Matrix2 where Scalar == Float {
 
     @inlinable public static func * (left: Matrix2, right: Matrix) -> Matrix2 {
         return left.fmap(
-            x: { $0 * right.elements },
-            y: { $0 * right.elements }
+            x: { $0 * right },
+            y: { $0 * right }
         )
     }
 
     @inlinable public static func / (left: Matrix2, right: Matrix) -> Matrix2 {
         return left.fmap(
-            x: { $0 / right.elements },
-            y: { $0 / right.elements }
+            x: { $0 / right },
+            y: { $0 / right }
         )
     }
 
@@ -80,15 +80,15 @@ extension Matrix2 where Scalar == Float {
 
     @inlinable public static func * (left: Matrix, right: Matrix2) -> Matrix2 {
         return right.fmap(
-            x: { left.elements * $0 },
-            y: { left.elements * $0 }
+            x: { left * $0 },
+            y: { left * $0 }
         )
     }
 
     @inlinable public static func / (left: Matrix, right: Matrix2) -> Matrix2 {
         return right.fmap(
-            x: { left.elements / $0 },
-            y: { left.elements * $0 }
+            x: { left / $0 },
+            y: { left * $0 }
         )
     }
 
@@ -98,29 +98,29 @@ extension Matrix2 where Scalar == Float {
 
     @inlinable public static func + (left: Matrix2, right: Matrix2) -> Matrix2 {
         return left.fmap(
-            x: { $0 + right.x.elements },
-            y: { $0 + right.y.elements }
+            x: { $0 + right.x },
+            y: { $0 + right.y }
         )
     }
 
     @inlinable public static func - (left: Matrix2, right: Matrix2) -> Matrix2 {
         return left.fmap(
-            x: { $0 - right.x.elements },
-            y: { $0 - right.y.elements }
+            x: { $0 - right.x },
+            y: { $0 - right.y }
         )
     }
 
     @inlinable public static func * (left: Matrix2, right: Matrix2) -> Matrix2 {
         return left.fmap(
-            x: { $0 * right.x.elements },
-            y: { $0 * right.y.elements }
+            x: { $0 * right.x },
+            y: { $0 * right.y }
         )
     }
 
     @inlinable public static func / (left: Matrix2, right: Matrix2) -> Matrix2 {
         return left.fmap(
-            x: { $0 / right.x.elements },
-            y: { $0 / right.y.elements }
+            x: { $0 / right.x },
+            y: { $0 / right.y }
         )
     }
 
@@ -224,15 +224,15 @@ extension Matrix2 where Scalar == Double {
 
     @inlinable public static func * (left: Matrix2, right: Matrix) -> Matrix2 {
         return left.fmap(
-            x: { $0 * right.elements },
-            y: { $0 * right.elements }
+            x: { $0 * right },
+            y: { $0 * right }
         )
     }
 
     @inlinable public static func / (left: Matrix2, right: Matrix) -> Matrix2 {
         return left.fmap(
-            x: { $0 / right.elements },
-            y: { $0 / right.elements }
+            x: { $0 / right },
+            y: { $0 / right }
         )
     }
 
@@ -242,15 +242,15 @@ extension Matrix2 where Scalar == Double {
 
     @inlinable public static func * (left: Matrix, right: Matrix2) -> Matrix2 {
         return right.fmap(
-            x: { left.elements * $0 },
-            y: { left.elements * $0 }
+            x: { left * $0 },
+            y: { left * $0 }
         )
     }
 
     @inlinable public static func / (left: Matrix, right: Matrix2) -> Matrix2 {
         return right.fmap(
-            x: { left.elements / $0 },
-            y: { left.elements * $0 }
+            x: { left / $0 },
+            y: { left * $0 }
         )
     }
 
@@ -260,29 +260,29 @@ extension Matrix2 where Scalar == Double {
 
     @inlinable public static func + (left: Matrix2, right: Matrix2) -> Matrix2 {
         return left.fmap(
-            x: { $0 + right.x.elements },
-            y: { $0 + right.y.elements }
+            x: { $0 + right.x },
+            y: { $0 + right.y }
         )
     }
 
     @inlinable public static func - (left: Matrix2, right: Matrix2) -> Matrix2 {
         return left.fmap(
-            x: { $0 - right.x.elements },
-            y: { $0 - right.y.elements }
+            x: { $0 - right.x },
+            y: { $0 - right.y }
         )
     }
 
     @inlinable public static func * (left: Matrix2, right: Matrix2) -> Matrix2 {
         return left.fmap(
-            x: { $0 * right.x.elements },
-            y: { $0 * right.y.elements }
+            x: { $0 * right.x },
+            y: { $0 * right.y }
         )
     }
 
     @inlinable public static func / (left: Matrix2, right: Matrix2) -> Matrix2 {
         return left.fmap(
-            x: { $0 / right.x.elements },
-            y: { $0 / right.y.elements }
+            x: { $0 / right.x },
+            y: { $0 / right.y }
         )
     }
 
