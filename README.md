@@ -49,9 +49,9 @@ Work in progress...
 Perhaps this should be a separate lib to Plinth
 
 Matrix2<Scalar> (perhaps swap ComplexMatrix out for this in certain cases)
-Jacobian2<Scalar>
+Matrix2x2<Scalar>
 Matrix3<Scalar>
-Jacobian3<Scalar>
+Matrix3x3<Scalar>
 
 might be a good place to integrate the ramp
 magnitude -> hypot
