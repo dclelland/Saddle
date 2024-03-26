@@ -57,7 +57,7 @@ public struct Matrix2x2<Scalar> where Scalar: SIMDScalar {
     
     public init(shape: Shape, elements: [SIMDMatrix]) {
         self.init(
-            xx: .init(shape: shape, elements: elements.map( \.x)),
+            xx: .init(shape: shape, elements: elements.map(\.x)),
             xy: .init(shape: shape, elements: elements.map(\.y)),
             yx: .init(shape: shape, elements: elements.map(\.z)),
             yy: .init(shape: shape, elements: elements.map(\.w))
