@@ -35,6 +35,7 @@ import Saddle
 
 ## Todo
 
+- [ ] Test vector calculus functions
 - [ ] Refactor matrix validation
 - [ ] Write documentation
 
