@@ -13,12 +13,4 @@ extension Matrix2 {
         return Matrix2<A>(x: xFunction(x), y: yFunction(y))
     }
     
-//    @inlinable public func fmap<A>(x xFunction: ([Scalar]) -> [A], y yFunction: ([Scalar]) -> [A]) -> Matrix2<A> {
-//        return Matrix2<A>(x: x.fmap(xFunction), y: y.fmap(yFunction))
-//    }
-//    
-//    @inlinable public func fmap<A>(x xFunction: ([Scalar], inout [A]) -> (), y yFunction: ([Scalar], inout [A]) -> ()) -> Matrix2<A> where A: Numeric {
-//        return Matrix2<A>(x: x.fmap(xFunction), y: y.fmap(yFunction))
-//    }
-    
 }

@@ -35,28 +35,16 @@ import Saddle
 
 ## Todo
 
-- [ ] Refactor matrix validation
+- [ ] Reinstantiate matrix validation
+- [ ] Consider adding relevant Accelerate wrappers
+- [ ] Consider adding helpers from `Linear Algebra` and `Transformations` modules
+- [ ] Consider adding helpers from `Image Processing` module
+- [ ] Consider adding ramp masks; radius (`hypot`) and phase (`atan2`) masks
+- [ ] Write `Matrix2` and `Matrix2x2` wrapper functions
+- [ ] Write `Matrix2x2` functors
+- [ ] Write `Matrix3`, `Matrix3x3` structs
 - [ ] Write documentation
 
 # Documentation
 
 Work in progress...
-
-# Notes
-
-```
-Matrix2<Scalar> (perhaps swap ComplexMatrix out for this in certain cases)
-Matrix2x2<Scalar>
-Matrix3<Scalar>
-Matrix3x3<Scalar>
-
-might be a good place to integrate the ramp
-magnitude -> hypot
-phase -> atan2
-
-should this support rgba as well as xyz etc?
-yeah perhaps these should have image implementations...?
-complex matrix image should have the lightness around the right way; just invert it first
-
-add accelerate wrappers
-```

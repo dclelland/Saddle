@@ -7,16 +7,6 @@
 
 import Plinth
 
-//infix operator <x>: MultiplicationPrecedence
-
-//extension Matrix2 where Scalar == Float {
-//    
-//    @inlinable public static func <x> (left: Matrix2, right: Matrix2) -> Matrix {
-//        return left.cross(right)
-//    }
-//    
-//}
-
 extension Matrix2 where Scalar == Float {
     
     public func cross(_ right: Matrix) -> Matrix {
@@ -28,14 +18,6 @@ extension Matrix2 where Scalar == Float {
     }
     
 }
-
-//extension Matrix2 where Scalar == Double {
-//    
-//    @inlinable public static func <x> (left: Matrix2, right: Matrix2) -> Matrix {
-//        return left.cross(right)
-//    }
-//    
-//}
 
 extension Matrix2 where Scalar == Double {
     
