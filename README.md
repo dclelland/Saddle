@@ -35,7 +35,6 @@ import Saddle
 
 ## Todo
 
-- [ ] Test vector calculus functions
 - [ ] Refactor matrix validation
 - [ ] Write documentation
 
@@ -46,8 +45,6 @@ Work in progress...
 # Notes
 
 ```
-Perhaps this should be a separate lib to Plinth
-
 Matrix2<Scalar> (perhaps swap ComplexMatrix out for this in certain cases)
 Matrix2x2<Scalar>
 Matrix3<Scalar>
@@ -58,20 +55,11 @@ magnitude -> hypot
 phase -> atan2
 
 should this support rgba as well as xyz etc?
-
-jacobian - just do it on a torus and then crop it
-
-Not Matrix2x2/Matrix3x3?
-And not Matrix<SIMD3<Scalar>>? (this would lose you all the Accelerate functions)
-
-perhaps do support SIMD2 etc structs via subscripts
-add functors
-
 yeah perhaps these should have image implementations...?
+complex matrix image should have the lightness around the right way; just invert it first
 
 - arithmetic
 - wrappers
 - functors
 - dot and cross products
-- complex image should have the lightness around the right way; just invert it first
 ```
