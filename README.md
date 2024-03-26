@@ -58,8 +58,5 @@ should this support rgba as well as xyz etc?
 yeah perhaps these should have image implementations...?
 complex matrix image should have the lightness around the right way; just invert it first
 
-- arithmetic
-- wrappers
-- functors
-- dot and cross products
+add accelerate wrappers
 ```
