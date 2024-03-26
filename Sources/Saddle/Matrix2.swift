@@ -10,7 +10,6 @@ import Plinth
 public struct Matrix2<Scalar> where Scalar: SIMDScalar {
     
     public typealias Matrix = Plinth.Matrix<Scalar>
-    public typealias Matrix2x2 = Saddle.Matrix2x2<Scalar>
     public typealias SIMDVector = SIMD2<Scalar>
     
     public var x: Matrix
