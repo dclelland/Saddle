@@ -5,11 +5,11 @@
 //  Created by Daniel Clelland on 15/04/24.
 //
 
-import Foundation
+import Plinth
 
 extension Matrix2 where Scalar: Numeric {
     
-    public static func zeros(shape: Shape) -> Matrix {
+    public static func zeros(shape: Shape) -> Matrix2 {
         return .init(
             x: .zeros(shape: shape),
             y: .zeros(shape: shape)
