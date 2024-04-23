@@ -9,7 +9,7 @@ import Plinth
 
 extension Matrix2 where Scalar == Float {
     
-    func splay(interval: Int = 1) -> Matrix {
+    public func splay(interval: Int = 1) -> Matrix {
         divergence(interval: interval).square()
     }
     
@@ -17,7 +17,7 @@ extension Matrix2 where Scalar == Float {
 
 extension Matrix2 where Scalar == Double {
     
-    func splay(interval: Int = 1) -> Matrix {
+    public func splay(interval: Int = 1) -> Matrix {
         divergence(interval: interval).square()
     }
     
