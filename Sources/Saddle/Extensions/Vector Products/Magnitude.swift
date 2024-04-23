@@ -15,7 +15,7 @@ extension Matrix2 where Scalar == Float {
     }
     
     public func squareMagnitude() -> Matrix {
-        return x.distanceSquared(y)
+        return x.square() * y.square()
     }
     
 }
@@ -27,7 +27,7 @@ extension Matrix2 where Scalar == Double {
     }
     
     public func squareMagnitude() -> Matrix {
-        return x.distanceSquared(y)
+        return x.square() * y.square()
     }
     
 }
