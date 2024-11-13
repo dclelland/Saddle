@@ -10,8 +10,8 @@ import Plinth
 extension Matrix2 where Scalar == Float {
     
     public func divergence() -> Matrix {
-        let dxx = x.padded(inset: 1).convolve3x3(filter: CentralDifferenceFilter.x3x3).cropped(inset: 1)
-        let dyy = y.padded(inset: 1).convolve3x3(filter: CentralDifferenceFilter.y3x3).cropped(inset: 1)
+        let dxx = x.padded(inset: 2).convolve5x5(filter: CentralDifferenceFilter.x5x5).cropped(inset: 2)
+        let dyy = y.padded(inset: 2).convolve5x5(filter: CentralDifferenceFilter.y5x5).cropped(inset: 2)
         return dxx + dyy
     }
     
@@ -20,8 +20,8 @@ extension Matrix2 where Scalar == Float {
 extension Matrix2 where Scalar == Double {
     
     public func divergence() -> Matrix {
-        let dxx = x.padded(inset: 1).convolve3x3(filter: CentralDifferenceFilter.x3x3).cropped(inset: 1)
-        let dyy = y.padded(inset: 1).convolve3x3(filter: CentralDifferenceFilter.y3x3).cropped(inset: 1)
+        let dxx = x.padded(inset: 2).convolve5x5(filter: CentralDifferenceFilter.x5x5).cropped(inset: 2)
+        let dyy = y.padded(inset: 2).convolve5x5(filter: CentralDifferenceFilter.y5x5).cropped(inset: 2)
         return dxx + dyy
     }
     
