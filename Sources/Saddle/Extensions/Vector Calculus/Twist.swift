@@ -9,16 +9,16 @@ import Plinth
 
 extension Matrix2 where Scalar == Float {
     
-    public func twist(interval: Int = 1) -> Matrix {
-        dot(curl(interval: interval)).square()
+    public func twist() -> Matrix {
+        dot(curl()).square()
     }
     
 }
 
 extension Matrix2 where Scalar == Double {
     
-    public func twist(interval: Int = 1) -> Matrix {
-        dot(curl(interval: interval)).square()
+    public func twist() -> Matrix {
+        dot(curl()).square()
     }
     
 }

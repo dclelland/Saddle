@@ -9,16 +9,16 @@ import Plinth
 
 extension Matrix2 where Scalar == Float {
     
-    public func bend(interval: Int = 1) -> Matrix {
-        cross(curl(interval: interval)).square()
+    public func bend() -> Matrix {
+        cross(curl()).square()
     }
     
 }
 
 extension Matrix2 where Scalar == Double {
     
-    public func bend(interval: Int = 1) -> Matrix {
-        cross(curl(interval: interval)).square()
+    public func bend() -> Matrix {
+        cross(curl()).square()
     }
     
 }

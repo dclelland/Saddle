@@ -9,9 +9,9 @@ import Plinth
 
 extension Matrix2 where Scalar == Float {
     
-    public func curl(interval: Int = 1) -> Matrix {
-        let dyx = (y.shifted(columns: -interval) - y.shifted(columns: interval)) / Scalar(interval * 2)
-        let dxy = (x.shifted(rows: -interval) - x.shifted(rows: interval)) / Scalar(interval * 2)
+    public func curl() -> Matrix {
+        let dyx = y.padded(inset: 1).convolve3x3(filter: CentralDifferenceFilter.x3x3).cropped(inset: 1)
+        let dxy = x.padded(inset: 1).convolve3x3(filter: CentralDifferenceFilter.y3x3).cropped(inset: 1)
         return dyx - dxy
     }
     
@@ -19,9 +19,9 @@ extension Matrix2 where Scalar == Float {
 
 extension Matrix2 where Scalar == Double {
     
-    public func curl(interval: Int = 1) -> Matrix {
-        let dyx = (y.shifted(columns: -interval) - y.shifted(columns: interval)) / Scalar(interval * 2)
-        let dxy = (x.shifted(rows: -interval) - x.shifted(rows: interval)) / Scalar(interval * 2)
+    public func curl() -> Matrix {
+        let dyx = y.padded(inset: 1).convolve3x3(filter: CentralDifferenceFilter.x3x3).cropped(inset: 1)
+        let dxy = x.padded(inset: 1).convolve3x3(filter: CentralDifferenceFilter.y3x3).cropped(inset: 1)
         return dyx - dxy
     }
     
