@@ -9,9 +9,10 @@ import Plinth
 
 extension Matrix where Scalar == Float {
     
-    public func gradient() -> Matrix2<Scalar> {
-        let dx = padded(inset: 2).convolve5x5(filter: CentralDifferenceFilter.x5x5).cropped(inset: 2)
-        let dy = padded(inset: 2).convolve5x5(filter: CentralDifferenceFilter.y5x5).cropped(inset: 2)
+    public func gradient(kernel: Matrix2<Scalar> = Kernel.centralDifference3x3) -> Matrix2<Scalar> {
+        let padding = kernel.shape.breadth / 2
+        let dx = padded(inset: padding).convolve(filter: kernel.x).cropped(inset: padding)
+        let dy = padded(inset: padding).convolve(filter: kernel.y).cropped(inset: padding)
         return Matrix2(x: dx, y: dy)
     }
     
@@ -19,9 +20,10 @@ extension Matrix where Scalar == Float {
 
 extension Matrix where Scalar == Double {
     
-    public func gradient() -> Matrix2<Scalar> {
-        let dx = padded(inset: 2).convolve5x5(filter: CentralDifferenceFilter.x5x5).cropped(inset: 2)
-        let dy = padded(inset: 2).convolve5x5(filter: CentralDifferenceFilter.y5x5).cropped(inset: 2)
+    public func gradient(kernel: Matrix2<Scalar> = Kernel.centralDifference3x3) -> Matrix2<Scalar> {
+        let padding = kernel.shape.breadth / 2
+        let dx = padded(inset: padding).convolve(filter: kernel.x).cropped(inset: padding)
+        let dy = padded(inset: padding).convolve(filter: kernel.y).cropped(inset: padding)
         return Matrix2(x: dx, y: dy)
     }
     
