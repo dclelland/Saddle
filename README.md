@@ -6,7 +6,7 @@ Hardware-accelerated vector calculus library for Swift.
 
 ### Swift Package Manager
 
-Simply add Plinth to your `Package.swift` file: 
+Simply add Saddle to your `Package.swift` file: 
 
 ```swift
 let package = Package(
